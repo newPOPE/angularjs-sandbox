@@ -4,14 +4,20 @@
   <title>AngularJS sandbox</title>
   <link rel="stylesheet" href="css/bootstrap.css">
 </head>
-<body>
-  <ul>
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/page/one">One</a></li>
-    <li><a href="#/page/two">Two</a></li>
-    <li><a href="#/page/three">Three</a></li>
-  </ul>
-  <div ng-view></div>
+<body ng-controller="BodyController">
+<div class="container">
+  <div class="row">
+    <div class="span8 offset2">
+      <ul class="nav nav-pills">
+        <li ng-class="{active: isLinkCurrent('/')}"><a href="#/">Home</a></li>
+        <li ng-class="{active: isLinkCurrent('/page/one')}"><a href="#/page/one">One</a></li>
+        <li ng-class="{active: isLinkCurrent('/page/two')}"><a href="#/page/two">Two</a></li>
+        <li ng-class="{active: isLinkCurrent('/page/three')}"><a href="#/page/three">Three</a></li>
+      </ul>
+      <div ng-view class="hero-unit"></div>
+    </div>
+  </div>
+</div>
 <script type="text/javascript" data-main="js/main" src="js/libs/require.js"></script>
 </body>
 </html>

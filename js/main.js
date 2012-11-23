@@ -1,9 +1,9 @@
 'use strict';
 
 require.config({
-  shim: {
-    'libs/angular': {
-      exports: 'angular'
+  shim:{
+    'libs/angular':{
+      exports:'angular'
     }
   }
 });
@@ -11,8 +11,9 @@ require.config({
 require([
   'app',
   'routers/router',
+  'controllers/body',
   'controllers/home',
   'controllers/page'
-], function() {
+], function () {
   angular.bootstrap(document, ['app']);
 });
